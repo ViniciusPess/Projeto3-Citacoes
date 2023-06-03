@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gerador de Citacoes Aleatorias</title>
+  <style>
+    @font-face{
+    font-family: '04b';
+    src: url(04B_30__.TTF) format('truetype');
+    }
+    body {
+      text-align: center;
+      padding: 50px;
+      font-family: Arial, sans-serif;
+      background-color: black;
+    }
+
+    h1 {
+      font-size: 50px;
+    color: #00BFFF;
+    text-align: center;
+    font-family: '04b';
+    }
+
+    #quote {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color:white;
+    }
+
+    #author {
+      font-style: italic;
+      color:white;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #45a049;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gerador de Citacoes Aleatorias</h1>
+  <div id="quote"></div>
+  <div id="author"></div>
+  <button onclick="generateQuote()">Gerar Citação</button>
+
+  <script>
+    
+    var quotes = [
+      {
+        quote: "A vida é 10% do que acontece comigo e 90% de como eu reajo a isso.",
+        author: "Charles R. Swindoll"
+      },
+      {
+        quote: "O sucesso é ir de fracasso em fracasso sem perder entusiasmo.",
+        author: "Winston Churchill"
+      },
+      {
+        quote: "A única maneira de fazer um excelente trabalho é amar o que você faz.",
+        author: "Steve Jobs"
+      },
+      {
+        quote: "Acredite em si mesmo e em tudo que você é. Saiba que há algo dentro de você que é maior do que qualquer obstáculo.",
+        author: "Christian D. Larson"
+      },
+      {
+        quote: "A persistência é o caminho do êxito.",
+        author: "Charles Chaplin"
+      },
+      {
+        quote: "Conhecimento parado torna-se esquecimento.",
+        author: "Samantha Schepanski"
+      },
+      {
+        quote: "No meio da dificuldade encontra-se a oportunidade",
+        author: "Desconhecido"
+      },
+      {
+        quote: "Eu faço da dificuldade a minha motivação. A volta por cima vem na continuação.",
+        author: "Charlie Brown Jr"
+      },
+      {
+        quote: "Pedras no caminho? Eu guardo todas. Um dia vou construir um castelo.",
+        author: "Nemo Nox"
+      },
+      {
+        quote: "O insucesso é apenas uma oportunidade para recomeçar com mais inteligência.",
+        author: "Henry Ford"
+      }
+
+
+
+
+    ];
+
+    function generateQuote() {
+      var randomIndex = Math.floor(Math.random() * quotes.length);
+      var randomQuote = quotes[randomIndex];
+      document.getElementById("quote").textContent = randomQuote.quote;
+      document.getElementById("author").textContent = "- " + randomQuote.author;
+    }
+  </script>
+</body>
+</html>
